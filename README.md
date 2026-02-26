@@ -54,17 +54,17 @@ Ces règles définissent le fonctionnement métier de l'administration et les co
 | Signification de la donnée | Type | Taille |
 | :--- | :--- | :--- |
 | Code unique de la ligne (ex: C01234) | Alphanumérique | 6 |
-| Nom commercial de la ligne (ex: RER B) | Texte | 20 |
+| Autorité organisatrice de la ligne (ex: Région Ile-de-France) | Texte | 20 |
 | Couleur hexadécimale de la ligne | Texte | 7 |
 | Nom de l'exploitant (ex: SNCF) | Texte | 50 |
 | Type de ligne (Train, RER, Tram-train) | Texte | 15 |
 | Nombre de points d'arrêts / Gares | Décimal | 100 |
-| Code UIC de la gare | Numérique | 8 |
-| Commune de localisation de la gare | Texte | 50 |
-| Coordonnée Latitude (GPS) | Décimal | 10 |
-| Coordonnée Longitude (GPS) | Décimal | 10 |
-| Présence d'un guichet de vente (Oui/Non) | Booléen | 1 |
-| Zone tarifaire Navigo (1 à 5) | Numérique | 1 |
+| Numéro d'exploitation de la rame | Alphanumérique | 15 |
+| Nom de la série (modèle) | Texte | 50 |
+| Tension d'alimentation principale | Texte | 15 |
+| Nombre de caisses par rame | Numérique | 2 |
+| Masse à vide (tonnes) | Numérique | 5 |
+| Nom du dépôt de maintenance | Texte | 50 |
 | Code du modèle de matériel (ex: Z50000) | Alphanumérique | 10 |
 | Nom usuel du matériel (ex: Francilien) | Texte | 50 |
 | Constructeur (ex: Alstom, CAF) | Texte | 30 |
@@ -72,20 +72,15 @@ Ces règles définissent le fonctionnement métier de l'administration et les co
 | Largeur de la rame (mètres) | Décimal | 4 |
 | Vitesse maximale autorisée (km/h) | Numérique | 3 |
 | Capacité totale de voyageurs | Numérique | 5 |
-| Nombre de places assises | Numérique | 4 |
+| Accès PMR (nombre de plateformes) | Numérique | 4 |
 | Type d'alimentation électrique | Texte | 20 |
-| Hauteur de plancher (mm) | Numérique | 4 |
-| Numéro de rame unique (N° exploitation) | Alphanumérique | 15 |
-| Date de mise en service | Date | 10 |
-| État actuel de la rame (Actif/Maintenance) | Texte | 15 |
-| Kilométrage total parcouru | Numérique | 8 |
-| Nom du centre de maintenance (STF) | Texte | 50 |
-| Date du dernier examen technique | Date | 10 |
-| Commentaire technique | Texte | 255 |
-| Année de fin de vie théorique | Numérique | 4 |
+| Livrée extérieure (ex: Île-de-France Mobilités, Carmillon) | Texte | 30 |
+| Numéro de rame unique (N° exploitation) | Alphanumérique | 15 | X
+| Date de mise en service | Date | 10 | 
+| État actuel de la rame (Actif/Maintenance) | Texte | 15 | X
+| Nom du centre de maintenance (STF) | Texte | 50 | X
 
 
 # Etape 2 : MCD
 
-[mettre image du MCD dans le README en plus du fihier .loo]
-[et préciser les potentiels (et trop nombreux..) éléments rajoutés car on peut on rajouter mais on peut pas en enlever]
+<img width="2603" height="1433" alt="image" src="https://github.com/user-attachments/assets/8e0d3a0c-d8cf-4442-800a-f46f98c6f3f2" />
