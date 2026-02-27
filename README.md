@@ -91,6 +91,7 @@ En plus des modifications listées ci-dessus, nous nous sommes permises de faire
 
 ## Etape 2 : MCD
 
-<img width="2603" height="1433" alt="image" src="https://github.com/user-attachments/assets/8e0d3a0c-d8cf-4442-800a-f46f98c6f3f2" />
+<img width="2582" height="1450" alt="image" src="https://github.com/user-attachments/assets/fb04cfc0-87a1-4ae6-8150-c150c883da10" />
+
 
 
