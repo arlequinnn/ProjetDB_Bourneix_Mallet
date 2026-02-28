@@ -101,7 +101,7 @@ En plus des modifications listées ci-dessus, nous nous sommes permises de faire
 
 LIGNE = (**ligne_nom** VARCHAR(50), ligne_type VARCHAR(50), ligne_nb_stations INT, ligne_couleur_hex VARCHAR(50));
 
-SERIE = (**serie_id** VARCHAR(50), serie_nom_modele VARCHAR(50), serie_effectifs INT, serie_est_articulee LOGICAL, serie_motorisation VARCHAR(50), serie_energie VARCHAR(50), serie_puissance VARCHAR(50), serie_vitesse_max INT, serie_largeur DOUBLE, serie_acces_pmr LOGICAL, serie_acces_toilettes LOGICAL, serie_climatisation LOGICAL, serie_livree VARCHAR(50));
+SERIE = (**serie_id** VARCHAR(50), serie_nom_modele VARCHAR(50), serie_effectifs INT, serie_est_articulee LOGICAL, serie_motorisation VARCHAR(50), serie_energie VARCHAR(50), serie_puissance INT, serie_vitesse_max INT, serie_largeur DOUBLE, serie_acces_pmr LOGICAL, serie_acces_toilettes LOGICAL, serie_climatisation LOGICAL, serie_livree VARCHAR(50));
 
 AUTORITE_ORGANISATRICE = (**ao_nom** VARCHAR(50), ao_nom_commercial VARCHAR(50));
 
