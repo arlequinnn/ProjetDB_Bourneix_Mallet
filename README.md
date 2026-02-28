@@ -91,7 +91,34 @@ En plus des modifications listées ci-dessus, nous nous sommes permises de faire
 
 ## Etape 2 : MCD
 
-<img width="2582" height="1450" alt="image" src="https://github.com/user-attachments/assets/fb04cfc0-87a1-4ae6-8150-c150c883da10" />
+<img width="2582" height="1450" alt="image" src="https://github.com/user-attachments/assets/fb04cfc0-87a1-4ae6-8150-c150c883da10" /> <br>
+*Capture d'écran du MCD créé avec Looping, fichier fourni dans le répertoire Github*
 
+## Etape 3 : MLD et MPD
 
+### MLD obtenu généré avec Looping  
+*Légende : les clés primaires sont en gras, les clés étrangères sont en italique.*
 
+LIGNE = (**ligne_nom** VARCHAR(50), ligne_type VARCHAR(50), ligne_nb_stations INT, ligne_couleur_hex VARCHAR(50));
+
+SERIE = (**serie_id** VARCHAR(50), serie_nom_modele VARCHAR(50), serie_effectifs INT, serie_est_articulee LOGICAL, serie_motorisation VARCHAR(50), serie_energie VARCHAR(50), serie_puissance VARCHAR(50), serie_vitesse_max INT, serie_largeur DOUBLE, serie_acces_pmr LOGICAL, serie_acces_toilettes LOGICAL, serie_climatisation LOGICAL, serie_livree VARCHAR(50));
+
+AUTORITE_ORGANISATRICE = (**ao_nom** VARCHAR(50), ao_nom_commercial VARCHAR(50));
+
+DEPOT = (**depot_id** VARCHAR(50), depot_nom VARCHAR(50), depot_ville VARCHAR(50), depot_capacite_voies INT);
+
+EXPLOITANT = (**exp_id** INT, exp_nom VARCHAR(50));
+
+CONSTRUCTEUR = (**constr_id** INT, constr_nom VARCHAR(50));
+
+STF = (**stf_code_interne** VARCHAR(50), stf_nom VARCHAR(50), *#exp_id*); 
+
+RAME = (**rame_matricule_motrice** VARCHAR(50), rame_composition VARCHAR(50), rame_longueur DOUBLE, rame_masse_a_vide DECIMAL(15,2), rame_capacite INT, rame_etat VARCHAR(50), *#ligne_nom*, *#ao_nom*, *#exp_id*, *#serie_id*);
+
+Produire = (_**#serie_id**_, _**#constr_id**_, production_date DATE, production_nom_plateforme VARCHAR(50), production_nom_projet VARCHAR(50)); 
+
+Utiliser = (_**#stf_code_interne**_, _**#depot_id**_);
+
+Gérer = (_**#ligne_nom**_, _**#exp_id**_); 
+
+Assembler = (_**#rame_matricule_motrice**_, _**#rame_matricule_motrice_1**_);
