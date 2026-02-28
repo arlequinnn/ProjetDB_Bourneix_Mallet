@@ -122,3 +122,13 @@ Utiliser = (_**#stf_code_interne**_, _**#depot_id**_);
 Gérer = (_**#ligne_nom**_, _**#exp_id**_); 
 
 Assembler = (_**#rame_matricule_motrice**_, _**#rame_matricule_motrice_1**_);
+
+## Etape 4 : Insertion données
+
+### Prompt fourni à l'IAG pour obtenir les données
+
+## Etape 5 : Interrogation de la BDD
+
+### Scénario d'utilisation
+
+
