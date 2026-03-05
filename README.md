@@ -127,6 +127,40 @@ Assembler = (_**#rame_matricule_motrice**_, _**#rame_matricule_motrice_1**_);
 
 ### Prompt fourni à l'IAG pour obtenir les données
 
+Tu cherches à concevoir une base de données sur le parc ferroviaire d'Ile de France, spécifiquement les Transiliens et RER (pas les tram-trains !)
+Donne les requêtes d’insertion permettant de remplir la base de données dont le modèle relationnel est le suivant : 
+
+LIGNE = (ligne_nom VARCHAR(50), ligne_type VARCHAR(50), ligne_nb_stations INT, ligne_couleur_hex VARCHAR(50)); --> ligne_nom
+SERIE = (serie_id VARCHAR(50), serie_nom_modele VARCHAR(50), serie_effectifs INT, serie_est_articulee LOGICAL, serie_motorisation VARCHAR(50), serie_energie VARCHAR(50), serie_puissance INT, serie_vitesse_max INT, serie_largeur DOUBLE, serie_acces_pmr LOGICAL, serie_acces_toilettes LOGICAL, serie_climatisation LOGICAL, serie_livree VARCHAR(50)); --> serie_id
+AUTORITE_ORGANISATRICE = (ao_nom VARCHAR(50), ao_nom_commercial VARCHAR(50)); --> ao_nom
+DEPOT = (depot_id VARCHAR(50), depot_nom VARCHAR(50), depot_ville VARCHAR(50), depot_capacite_voies INT); --> depot_id
+EXPLOITANT = (exp_id INT, exp_nom VARCHAR(50)); --> exp_id
+CONSTRUCTEUR = (constr_id INT, constr_nom VARCHAR(50)); --> constr_id
+STF = (stf_code_interne VARCHAR(50), stf_nom VARCHAR(50), #exp_id); --> stf_code_interne
+RAME = (rame_matricule_motrice VARCHAR(50), rame_composition VARCHAR(50), rame_longueur DOUBLE, rame_masse_a_vide DECIMAL(15,2), rame_capacite INT, rame_etat VARCHAR(50), #ligne_nom, #ao_nom, #exp_id, #serie_id); --> rame_matricule_motrice
+Produire = (#serie_id, #constr_id, production_date DATE, production_nom_plateforme VARCHAR(50), production_nom_projet VARCHAR(50)); --> #serie_id, #constr_id
+Utiliser = (#stf_code_interne, #depot_id); --> #stf_code_interne, #depot_id
+Gérer = (#ligne_nom, #exp_id); --> #ligne_nom, #exp_id
+Assembler = (#rame_matricule_motrice, #rame_matricule_motrice_1); --> #rame_matricule_motrice, #rame_matricule_motrice_1
+
+Les clés primaires sont précisées à la fin de chaque relation, les clés étrangères sont identifiées par les #, et ont le même nom que les clés primaires auxquelles elles font référence.
+
+Consignes de remplissage supplémentaires : 
+- le nom des lignes se réfère à leur lettre
+- le type des lignes se réfère au réseau (RER ou Transilien)
+- la couleur est un code hexadécimal complet, # compris !
+- le nom d'une série se compose de la première lettre (Z, X ou B) indiquant la motorisation + des chiffres qui l'identifient
+- pour la motorisation choisis entre 'Automotrice', 'Autorail', 'Bimode' et 'Locomotive' 
+- pour l'énergie choisis entre 'Electrique', 'Gazole' et 'Hybride'
+- distingue bien le nom du modèle, du nom de projet, du nom de plateforme (exemple : nom de modèle Francilien, nom de projet NAT, nom de plateforme Spacium 3.06)
+- serie_est_articulee est VRAI seulement pour les locomotives (BB27300), qui compte alors comme une 'Rame' avec une capacité faisant référence au convoi entier !
+- ao_nom est le nom de la région, ao_nom_commercial est le nom commercial de la région (ex : Île-de-France et Île-de-France Mobilités)
+- les unités sont en système international 
+
+Les clés étrangères doivent faire référence aux clés primaires existantes : donne les lignes en commençant par remplir les tables dans lesquelles il n'y a pas de clés étrangères, puis les tables dans lesquelles les clés étrangères font références à des clés primaires des tables déjà remplies. 
+
+Fournis l'ensemble sous la forme d’un script SQL prêt à être exécuté.
+
 ## Etape 5 : Interrogation de la BDD
 
 ### Scénario d'utilisation
