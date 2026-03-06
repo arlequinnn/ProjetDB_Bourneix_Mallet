@@ -163,6 +163,37 @@ Fournis l'ensemble sous la forme d’un script SQL prêt à être exécuté.
 
 ## Etape 5 : Interrogation de la BDD
 
-### Scénario d'utilisation
+### Scénarios d'utilisation
 
+#### Une personne en charge de suivre le trafic ferroviaire pour adapter les fréquences de passage :
+
+* Afficher toutes les lignes avec le nombre de rames actives dans l'ordre alphabétique des lignes
+* Afficher dans l'ordre décroissant le nombre de rames par réseau (RER ou Transilien)
+* Afficher pour chaque ligne le nombre de rames fonctionnant à l'énergie électrique et le nombre de rames fonctionnant au gazole
+* Sommer la capacité de chaque rame assemblée à une rame choisie et renvoyer la capacité totale de l'unité
+* Afficher le nombre de stations par type de réseau
+
+#### Une personne en charge de contrôler les séances de maintenance et la gestion technique des rames :
+
+* Afficher toutes les séries qui ont le même nom de modèle
+* Lister toutes les séries ayant le même nom de plateforme
+* Calculer la longueur d'une unité multiple en sommant la longueur de toutes les rames assemblées
+* Lister tous les dépôts qui ne sont pas utilisés par une STF en particulier
+* Lister toutes les séries dont la puissance est supérieure à la moyenne
+* Afficher les dépôts qui sont utilisés par plus d'une STF
+
+#### Une personne en charge de gérer les contrats :
+
+* Lister par exploitant les rames lui étant affectées
+* Lister par constructeur les séries produites ainsi que leur nombre d'effectifs
+* Accéder à la date de production et au nom de projet d'une série
+* Afficher les lignes qui sont gérées par plus d'un exploitant
+* Lister les constructeurs récents avec leur première série
+    
+#### Une personne en charge de programmer les voyages longs et le confort des usagers :
+
+* Afficher les caractéristiques liées au confort pour une série selon sa date de production
+* Récupérer la couleur d'une ligne
+* Lister toutes les séries qui roulent le plus vite
+* Afficher les trois modèles ayant la vitesse max la plus élevée, parmi les modèles dont cette vitesse ne dépasse pas les 180 km/h
 
